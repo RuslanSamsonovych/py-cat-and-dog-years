@@ -19,6 +19,7 @@ class TestGetHumanAge:
             pytest.param(100, 100, [21, 17]),
             pytest.param(0, 100, [0, 17]),
             pytest.param(100, 0, [21, 0]),
+            pytest.param(1000, 5000, [246, 997]),
         ],
         ids=[
             "get_human_age_when_both_ages_are_zero",
@@ -33,6 +34,7 @@ class TestGetHumanAge:
             "get_human_age_for_large_ages",
             "get_human_age_when_only_cat_age_is_zero",
             "get_human_age_when_only_dog_age_is_zero",
+            "get_human_age_for_extra_large_ages"
         ],
     )
     def test_convert_cat_and_dog_age_into_human_age_correctly(
@@ -58,7 +60,7 @@ class TestGetHumanAge:
             "should_raise_error_if_cat_age_less_than_zero",
             "should_raise_error_if_dog_age_less_than_zero",
             "should_raise_error_if_cat_age_not_int",
-            "should_raise_error_if_cat_age_not_int",
+            "should_raise_error_if_dog_age_not_int",
         ],
     )
     def test_raising_errors_correctly(

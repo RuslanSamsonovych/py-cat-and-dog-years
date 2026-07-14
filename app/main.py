@@ -1,5 +1,5 @@
 def get_human_age(cat_age: int, dog_age: int) -> list:
-    if not isinstance(cat_age, int) and not isinstance(dog_age, int):
+    if not isinstance(cat_age, int) or not isinstance(dog_age, int):
         raise TypeError("Age should be integer")
 
     age_dict = {"cat_age": cat_age, "dog_age": dog_age}
